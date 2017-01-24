@@ -5,7 +5,7 @@
 ========================================== */
 
 #include "unity.h"
-#include "cmock_internals.h"
+#include "cmock.h"
 
 #define TEST_MEM_INDEX_SIZE  (sizeof(CMOCK_MEM_INDEX_TYPE))
 
@@ -179,7 +179,7 @@ void test_ThatCMockStopsReturningMoreDataWhenItRunsOutOfMemory(void)
   }
 
   //there aren't any after that
-  TEST_ASSERT_EQUAL_HEX(CMOCK_GUTS_NONE, (_UU32)next);
+  TEST_ASSERT_EQUAL_HEX(CMOCK_GUTS_NONE, (UNITY_UINT32)next);
 }
 
 void test_ThatCMockStopsReturningMoreDataWhenAskForMoreThanItHasLeftEvenIfNotAtExactEnd(void)
